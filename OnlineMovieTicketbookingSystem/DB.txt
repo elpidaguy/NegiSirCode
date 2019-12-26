@@ -1,0 +1,112 @@
+﻿CREATE TABLE [dbo].[Book_Ticket] (
+    [Bookin_ID]     INT           IDENTITY (1, 10) NOT NULL,
+    [ShowID]        VARCHAR (MAX) NULL,
+    [TransactionID] VARCHAR (MAX) NULL,
+    [UserEmail]     VARCHAR (MAX) NULL,
+    [Booking_Date]  VARCHAR (MAX) NULL,
+    [Movie_Date]    VARCHAR (MAX) NULL,
+    [Status]        VARCHAR (50)  NULL,
+    PRIMARY KEY CLUSTERED ([Bookin_ID] ASC)
+);
+
+CREATE TABLE [dbo].[Contact_US] (
+    [Req_ID]  INT           IDENTITY (1, 1) NOT NULL,
+    [Name]    VARCHAR (50)  NULL,
+    [Email]   VARCHAR (50)  NULL,
+    [PhoneNo] VARCHAR (50)  NULL,
+    [Subject] VARCHAR (100) NULL,
+    [Message] TEXT          NULL,
+    PRIMARY KEY CLUSTERED ([Req_ID] ASC)
+);
+
+CREATE TABLE [dbo].[Lgn_Tbl] (
+    [UserEmail] VARCHAR (50) NOT NULL,
+    [Password]  VARCHAR (50) NULL,
+    [Status]    VARCHAR (50) NULL,
+    [UserType]  VARCHAR (50) NULL,
+    [Name]      VARCHAR (50) NULL,
+    [PhoneNo]   VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([UserEmail] ASC)
+);
+
+CREATE TABLE [dbo].[Movie_Tbl] (
+    [MovieID]      INT           IDENTITY (101, 10) NOT NULL,
+    [MovieName]    VARCHAR (50)  NULL,
+    [Description]  TEXT          NULL,
+    [Director]     VARCHAR (50)  NULL,
+    [Release_Date] VARCHAR (50)  NULL,
+    [MovieImage]   VARCHAR (MAX) NULL,
+    [Status]       VARCHAR (50)  NULL,
+    [MovieTrailer] VARCHAR (MAX) NULL,
+    [MovieTyp]     VARCHAR (50)  NULL,
+    [Cast]         VARCHAR (MAX) NULL,
+    [Story]        VARCHAR (MAX) NULL,
+    [Likes]        INT           NULL,
+    PRIMARY KEY CLUSTERED ([MovieID] ASC)
+);
+
+CREATE TABLE [dbo].[Movie_Rating] (
+    [Id]        INT          IDENTITY (20, 20) NOT NULL,
+    [MovieID]   INT          NULL,
+    [UserEmail] VARCHAR (50) NULL,
+    [Rating]    VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Refund_Tbl] (
+    [RefundID]      INT          NOT NULL,
+    [TransactionID] VARCHAR (50) NULL,
+    [RefundAmount]  INT          NULL,
+    [Status]        VARCHAR (50) NULL,
+    [RefundDate]    VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([RefundID] ASC)
+);
+
+CREATE TABLE [dbo].[Show_Tbl] (
+    [ShowID]         INT          IDENTITY (1, 1) NOT NULL,
+    [CureentMovie]   INT          NULL,
+    [CurrentTheatre] INT          NULL,
+    [ShowTime]       VARCHAR (50) NULL,
+    [RemainingSeats] INT          NULL,
+    PRIMARY KEY CLUSTERED ([ShowID] ASC)
+);
+
+CREATE TABLE [dbo].[Seat_Tbl] (
+    [Id]         INT          IDENTITY (1, 1) NOT NULL,
+    [Booking_ID] VARCHAR (50) NULL,
+    [Seat_No]    VARCHAR (50) NULL,
+    [Status]     VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Theatre_Tbl] (
+    [ThatreID]   INT        IDENTITY (10, 10) NOT NULL,
+    [ThatreName] NCHAR (10) NULL,
+    [Area]       NCHAR (10) NULL,
+    [Address]    NCHAR (10) NULL,
+    PRIMARY KEY CLUSTERED ([ThatreID] ASC)
+);
+
+CREATE TABLE [dbo].[Transaction_Tbl] (
+    [Txn_ID]        INT          IDENTITY (1, 1000) NOT NULL,
+    [EmailID]       VARCHAR (50) NULL,
+    [Amount]        VARCHAR (50) NULL,
+    [Status]        VARCHAR (50) NULL,
+    [TransactionID] VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([Txn_ID] ASC)
+);
+Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\MS.net\PriMayDay4\WebApplication\PHP\MVCDemo\MVCDemo\App_Data\CustomerDB.mdf;Integrated Security=True
+Data Source=(LocalDB)\MSSQLLocalDBAttachDbFilename=C:\Users\dac\Downloads\OnlineMovieTicketbookingSystem\App_Data\MovieTicket.mdf;Integrated Security=True
+CREATE TABLE [dbo].[Wallet] (
+    [WalletID] INT          IDENTITY (10, 10) NOT NULL,
+    [EmailID]  VARCHAR (50) NULL,
+    [Amount]   INT          NULL,
+    PRIMARY KEY CLUSTERED ([WalletID] ASC)
+);
+
+CREATE TABLE [dbo].[Rating] (
+    [Id]      INT IDENTITY (1, 1) NOT NULL,
+    [MovieId] INT NULL,
+    [Rating]  INT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);

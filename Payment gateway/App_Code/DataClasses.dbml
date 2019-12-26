@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="bank" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\bank.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="bankConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.card_detail" Member="card_details">
+    <Type Name="card_detail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="card_no" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="card_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="amount" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="expiry" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="card_holder" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cvv_no" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.trnsc_tbl" Member="trnsc_tbls">
+    <Type Name="trnsc_tbl">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="txnid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="amount" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="cardnofrom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cardnoto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="transaction_date" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

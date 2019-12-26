@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CustomerDB" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CustomerDB.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CustomerDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_Customers" Member="tbl_Customers">
+    <Type Name="tbl_Customer">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="customername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="customerage" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="customeremail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.GetAllCustomers" Method="GetAllCustomers">
+    <ElementType Name="GetAllCustomersResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="customername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="customerage" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="customeremail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

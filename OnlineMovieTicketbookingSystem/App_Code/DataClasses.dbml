@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MovieTicket" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\MovieTicket.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MovieTicketConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Contact_US" Member="Contact_US">
+    <Type Name="Contact_US">
+      <Column Name="Req_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Lgn_Tbl" Member="Lgn_Tbls">
+    <Type Name="Lgn_Tbl">
+      <Column Name="UserEmail" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Theatre_Tbl" Member="Theatre_Tbls">
+    <Type Name="Theatre_Tbl">
+      <Column Name="ThatreID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ThatreName" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Area" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserCard_Tbl" Member="UserCard_Tbls">
+    <Type Name="UserCard_Tbl">
+      <Column Name="Card_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserEmail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CardNumber" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Cvv" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Pin" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Refund_Tbl" Member="Refund_Tbls">
+    <Type Name="Refund_Tbl">
+      <Column Name="RefundID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TransactionID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RefundAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RefundDate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Wallet" Member="Wallets">
+    <Type Name="Wallet">
+      <Column Name="WalletID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmailID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Show_Tbl" Member="Show_Tbls">
+    <Type Name="Show_Tbl">
+      <Column Name="ShowID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CureentMovie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CurrentTheatre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShowTime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RemainingSeats" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Movie_Tbl" Member="Movie_Tbls">
+    <Type Name="Movie_Tbl">
+      <Column Name="MovieID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MovieName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Director" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Release_Date" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MovieImage" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MovieTrailer" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MovieTyp" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cast" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Story" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Likes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Transaction_Tbl" Member="Transaction_Tbls">
+    <Type Name="Transaction_Tbl">
+      <Column Name="Txn_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmailID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TransactionID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Seat_Tbl" Member="Seat_Tbls">
+    <Type Name="Seat_Tbl">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Booking_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Seat_No" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Book_Ticket" Member="Book_Tickets">
+    <Type Name="Book_Ticket">
+      <Column Name="Bookin_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShowID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TransactionID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="UserEmail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Booking_Date" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Movie_Date" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Movie_Rating" Member="Movie_Ratings">
+    <Type Name="Movie_Rating">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MovieID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserEmail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Rating" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rating" Member="Ratings">
+    <Type Name="Rating">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MovieId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Rating" Member="Rating1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
